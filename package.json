@@ -2,9 +2,6 @@
   "name": "ps3-update-tool",
   "private": true,
   "version": "1.0.0",
-  "engines": {
-    "node": "16"
-  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
