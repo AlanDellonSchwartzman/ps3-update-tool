@@ -39,7 +39,7 @@ export const Content = styled.div`
 
 export const Header = styled.div`
   display: flex;
-  flex: 1;
+  flex: 1.35;
   flex-direction: column;
   align-items: center;
   justify-content: center;
