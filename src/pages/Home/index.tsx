@@ -15,25 +15,29 @@ import {
 } from './styles';
 
 const Home: React.FC = () => {
-  const [textInput, setTextInput] = useState('');
+  const [textInput, setTextInput] = useState('' as string);
   const [disabled, setDisabled] = useState(false);
+  const [updateLinks, setUpdateLinks] = useState(null);
 
-  interface EventProps {
-    target: {
-      value: string;
-    };
-  }
-
-  const onChangeText = (e: EventProps) => {
-    setTextInput(e.target.value);
+  const onChangeText = (e: React.FormEvent<HTMLInputElement>) => {
+    setTextInput(e.currentTarget.value.toUpperCase());
   };
 
   const handleDownload = () => {
     setDisabled(true);
 
-    getUpdateUrl({ serial: textInput });
+    fetchUpdates();
+  };
 
+  const fetchUpdates = async () => {
+    const links = await getUpdateUrl({ serial: textInput });
     setDisabled(false);
+
+    downloadUpdate(links[links.length - 1].url);
+  };
+
+  const downloadUpdate = (url: string) => {
+    window.open(url, '_blank');
   };
 
   return (
@@ -46,7 +50,7 @@ const Home: React.FC = () => {
         <Footer>
           <InputContainer>
             <Input disabled={disabled} onChange={onChangeText} />
-            <ButtonDownload onClick={handleDownload} disablad={disabled}>
+            <ButtonDownload onClick={handleDownload} disabled={disabled}>
               <DownloadIcon />
             </ButtonDownload>
           </InputContainer>

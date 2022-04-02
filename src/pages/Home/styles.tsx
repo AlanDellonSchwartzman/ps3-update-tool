@@ -18,7 +18,7 @@ export const Container = styled.div`
   flex: 1;
   width: 100vw;
   height: 100vh;
-  background-color: rgb(76, 39, 141);
+  background-color: #776fbf;
   align-items: center;
   justify-content: center;
 `;
@@ -44,25 +44,27 @@ export const Header = styled.div`
   align-items: center;
   justify-content: center;
   padding-top: 25px;
+  width: 100%;
 `;
 
 export const Logo = styled.img.attrs(() => ({
   src: LogoImage,
 }))`
-  width: 80%;
-  height: 80%;
+  width: 30vmin;
+  height: 30vmin;
   margin-bottom: 25px;
 `;
 
 export const Title = styled.span`
-  font-size: 36px;
+  font-size: 5vmin;
   font-weight: bold;
   text-shadow: 3px 3px 9px rgba(0, 0, 0, 0.29);
+  text-align: center;
 `;
 
 export const Footer = styled.div`
   display: flex;
-  flex: 3;
+  flex: 0.8;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
@@ -72,8 +74,8 @@ export const Footer = styled.div`
 export const InputContainer = styled.div`
   display: flex;
   flex-direction: row;
-  width: 50%;
-  height: 35px;
+  width: 60%;
+  height: 6.5vmin;
   border-radius: 50px;
   background-color: white;
   border: 1px solid black;
@@ -83,14 +85,21 @@ export const Input = styled.input.attrs((props: InputProps) => ({
   placeholder: 'NPUB31419',
   disabled: props.disabled,
   onChange: props.onChange,
+  maxLength: 9,
+  autoFocus: true,
+  autoComplete: 'serial',
+  name: 'serial',
+  enterKeyHint: 'next',
 }))<InputProps>`
   width: 80%;
-  padding: 15px 10px;
+  padding: 10px 10px;
   border: 0.1px;
   outline: none;
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
-  font-size: 22px;
+  text-transform: uppercase;
+  font-size: 3.2vmin;
+  cursor: ${(props: InputProps) => (props.disabled ? 'not-allowed' : 'auto')};
 `;
 
 export const ButtonDownload = styled.button.attrs((props: ButtonProps) => ({
@@ -105,10 +114,10 @@ export const ButtonDownload = styled.button.attrs((props: ButtonProps) => ({
   cursor: ${(props: ButtonProps) =>
     props.disabled ? 'not-allowed' : 'pointer'};
   background-color: ${(props: ButtonProps) =>
-    props.disabled ? '#645199' : '#a686fb'};
+    props.disabled ? 'rgb(76, 39, 141)' : '#776FBF'};
 
   :active {
-    background-color: #846ebf;
+    background-color: #645199;
   }
 `;
 
