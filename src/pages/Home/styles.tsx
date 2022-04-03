@@ -99,7 +99,10 @@ export const Input = styled.input.attrs((props: InputProps) => ({
   border-bottom-left-radius: 50px;
   text-transform: uppercase;
   font-size: 3.2vmin;
-  cursor: ${(props: InputProps) => (props.disabled ? 'not-allowed' : 'auto')};
+
+  :disabled {
+    cursor: 'not-allowed';
+  }
 `;
 
 export const ButtonDownload = styled.button.attrs((props: ButtonProps) => ({
@@ -111,10 +114,13 @@ export const ButtonDownload = styled.button.attrs((props: ButtonProps) => ({
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
   border-left: 0.5px solid gray;
-  cursor: ${(props: ButtonProps) =>
-    props.disabled ? 'not-allowed' : 'pointer'};
-  background-color: ${(props: ButtonProps) =>
-    props.disabled ? 'rgb(76, 39, 141)' : '#776FBF'};
+  background-color: #776fbf;
+  cursor: pointer;
+
+  :disabled {
+    background-color: rgb(76, 39, 141);
+    cursor: not-allowed;
+  }
 
   :active {
     background-color: #645199;
