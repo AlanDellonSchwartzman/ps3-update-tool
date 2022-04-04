@@ -101,7 +101,7 @@ export const Input = styled.input.attrs((props: InputProps) => ({
   font-size: 3.2vmin;
 
   :disabled {
-    cursor: 'not-allowed';
+    cursor: not-allowed;
   }
 `;
 

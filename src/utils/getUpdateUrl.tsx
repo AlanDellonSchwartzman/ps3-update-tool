@@ -1,22 +1,25 @@
 import axios, { AxiosError, AxiosResponse } from 'axios';
-import Swal from 'sweetalert2';
+import Swal, { SweetAlertIcon } from 'sweetalert2';
 import 'sweetalert2/src/sweetalert2.scss';
 
 interface GetUpdateUrlProps {
   serial: string;
 }
 
+const genericErrorMessage = (
+  title: string = 'Error',
+  text: string = 'Try again in few moments',
+  icon: SweetAlertIcon = 'error'
+) => {
+  Swal.fire(title, text, icon);
+};
+
 export default async function getUpdateUrl(props: GetUpdateUrlProps) {
   const { serial } = props;
   const BASE_URL = `${import.meta.env.VITE_SERVICE_URL}`;
 
-  const genericErrorMessage = () => {
-    Swal.fire({
-      title: 'Error',
-      text: 'Try again in few moments',
-      icon: 'error',
-    });
-  };
+  if (!(serial != '') || !serial || serial.length < 9)
+    return genericErrorMessage('Ops', 'Please enter a serial valid', 'warning');
 
   try {
     const { data }: AxiosResponse = await axios.get(BASE_URL, {
@@ -25,7 +28,8 @@ export default async function getUpdateUrl(props: GetUpdateUrlProps) {
       },
     });
 
-    if (!data || Object.keys(data).length < 1) genericErrorMessage();
+    if (data.length < 1)
+      genericErrorMessage('Ops', 'No update available', 'warning');
 
     return data;
   } catch (err) {
