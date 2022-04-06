@@ -42,7 +42,7 @@ const Card: React.FC = () => {
     // a.href = url;
     // a.click();
     // window.URL.revokeObjectURL(url);
-    window.open(url, '_blank');
+    window.open(url, '_parent');
   };
 
   return (
