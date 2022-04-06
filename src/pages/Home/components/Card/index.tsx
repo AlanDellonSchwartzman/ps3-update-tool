@@ -38,7 +38,7 @@ const Card: React.FC = () => {
   };
 
   const downloadUpdate = (url: string) => {
-    window.open(url, '_parent')
+    window.open(url, '_blank');
   };
 
   return (
