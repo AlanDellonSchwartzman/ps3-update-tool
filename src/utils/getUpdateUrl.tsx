@@ -37,7 +37,7 @@ export default async function getUpdateUrl(props: GetUpdateUrlProps) {
     if (axios.isAxiosError(error)) {
       Swal.fire({
         title: 'Error',
-        text: error.response?.data,
+        text: error.response?.data.detail,
         icon: 'error',
       });
     } else {
