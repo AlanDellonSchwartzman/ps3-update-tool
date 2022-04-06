@@ -38,10 +38,7 @@ const Card: React.FC = () => {
   };
 
   const downloadUpdate = (url: string) => {
-    const a = document.createElement('a');
-    a.href = url;
-    a.click();
-    window.URL.revokeObjectURL(url);
+    window.open(url, '_parent')
   };
 
   return (
