@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Loading from '../../../../components/Loading';
 
 import getUpdateUrl from '../../../../utils/getUpdateUrl';
 
@@ -17,7 +18,6 @@ import {
 const Card: React.FC = () => {
   const [textInput, setTextInput] = useState('' as string);
   const [disabled, setDisabled] = useState(false);
-  const [updateLinks, setUpdateLinks] = useState(null);
 
   const onChangeText = (e: React.FormEvent<HTMLInputElement>) => {
     setTextInput(e.currentTarget.value.toUpperCase());
@@ -45,6 +45,12 @@ const Card: React.FC = () => {
     window.open(url, '_blank', 'noopener');
   };
 
+  const RenderDownloadButton = () => (
+    <ButtonDownload onClick={handleDownload} disabled={disabled}>
+      {disabled ? <Loading /> : <DownloadIcon />}
+    </ButtonDownload>
+  );
+
   return (
     <>
       <Content>
@@ -55,9 +61,7 @@ const Card: React.FC = () => {
         <Footer>
           <InputContainer>
             <Input disabled={disabled} onChange={onChangeText} />
-            <ButtonDownload onClick={handleDownload} disabled={disabled}>
-              <DownloadIcon />
-            </ButtonDownload>
+            <RenderDownloadButton />
           </InputContainer>
         </Footer>
       </Content>

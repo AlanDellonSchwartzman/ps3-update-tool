@@ -4,6 +4,8 @@ import GithubImage from '../../../../assets/github.svg';
 export const Container = styled.div`
   align-items: center;
   justify-content: center;
+  margin-top: 3vmin;
+  height: 0;
 `;
 
 export const GithubLink = styled.a.attrs(() => ({

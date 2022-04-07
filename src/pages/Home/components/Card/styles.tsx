@@ -25,7 +25,6 @@ export const Content = styled.div`
 
   -webkit-box-shadow: 0px 10px 26px 3px rgba(0, 0, 0, 0.26);
   box-shadow: 0px 10px 26px 3px rgba(0, 0, 0, 0.26);
-  margin-bottom: 4vmin;
 `;
 
 export const Header = styled.div`
@@ -83,13 +82,13 @@ export const Input = styled.input.attrs((props: InputProps) => ({
   enterKeyHint: 'next',
 }))<InputProps>`
   width: 80%;
-  padding: 10px 10px;
+  padding: 6px 10px 5px 10px;
   border: 0.1px;
   outline: none;
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
   text-transform: uppercase;
-  font-size: 3.2vmin;
+  font-size: 3vmin;
 
   :disabled {
     cursor: not-allowed;
@@ -100,6 +99,9 @@ export const ButtonDownload = styled.button.attrs((props: ButtonProps) => ({
   onClick: props.onClick,
   disabled: props.disabled,
 }))<ButtonProps>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 20%;
   border: none;
   border-top-right-radius: 50px;
