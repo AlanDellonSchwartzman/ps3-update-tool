@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  border: 5px solid #f3f3f3; /* Light grey */
-  border-top: 5px solid #776fbf; /* Blue */
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #4F458D;
   border-radius: 50%;
   width: 15px;
   height: 15px;

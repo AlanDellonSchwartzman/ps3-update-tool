@@ -111,7 +111,6 @@ export const ButtonDownload = styled.button.attrs((props: ButtonProps) => ({
   cursor: pointer;
 
   :disabled {
-    background-color: rgb(76, 39, 141);
     cursor: not-allowed;
   }
 
