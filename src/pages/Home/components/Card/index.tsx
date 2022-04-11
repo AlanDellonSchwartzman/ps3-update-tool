@@ -42,7 +42,8 @@ const Card: React.FC = () => {
     // a.href = url;
     // a.click();
     // window.URL.revokeObjectURL(url);
-    window.open(url);
+    // window.open('', '_blank');
+    window.location.href = url;
   };
 
   const RenderDownloadButton = () => (
