@@ -38,12 +38,12 @@ const Card: React.FC = () => {
   };
 
   const downloadUpdate = (url: string) => {
-    // const a = document.createElement('a');
-    // a.href = url;
-    // a.click();
-    // window.URL.revokeObjectURL(url);
+    const a = document.createElement('a');
+    a.href = url.replace('http', 'https');
+    a.click();
+    window.URL.revokeObjectURL(url);
     // window.open('', '_blank');
-    window.location.href = url;
+    // window.location.href = url.replace('');
   };
 
   const RenderDownloadButton = () => (
