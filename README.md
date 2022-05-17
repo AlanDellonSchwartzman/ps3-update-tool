@@ -2,12 +2,12 @@
 
 Project to make it possible to download updates for *PlayStation3* games through the game's serial.
 
-:video_game: To use access [ps3-update-tool.vercel.app](http://ps3-update-tool.vercel.app/ "ps3-update-tool.vercel.app"), made by a game lover for all gamers. **GG!**
-<br />
+:video_game: To use access [ps3-update-tool.vercel.app](http://ps3-update-tool.vercel.app/ "ps3-update-tool.vercel.app"), made by a game lover for all gamers. **GG!** <br />
+
 
 ## If you wanted to run the project on your machine
-:asterisk: *This project needs an external service that provides the download links, such as the project* [ps3-update-tool-service-python](https://github.com/AlanDellonSchwartzman/ps3-update-tool-service-python).
-<br />
+:asterisk: *This project needs an external service that provides the download links, such as the project* [ps3-update-tool-service-python](https://github.com/AlanDellonSchwartzman/ps3-update-tool-service-python). <br />
+
 
 Clone this repository or download like zip, then run these commands in the project folder: 
 
