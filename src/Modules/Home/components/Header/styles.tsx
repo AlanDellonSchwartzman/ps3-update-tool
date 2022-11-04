@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import Image from 'next/image';
 import { Box } from '@mui/material';
 
@@ -12,13 +12,12 @@ export const Container = styled(Box)`
   padding: 15px;
 `;
 
-export const Logo = styled(Image).attrs({
-  priority: true,
-  src: '/images/logo.svg',
-  alt: 'Vercel Logo',
+export const Logo = styled(Image)``;
+Logo.defaultProps = {
+  alt: 'Logo',
   width: 200,
   height: 200,
-})``;
+};
 
 export const Title = styled.span`
   font-size: 2rem;

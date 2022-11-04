@@ -1,9 +1,7 @@
-import styled from 'styled-components';
 import { Container, Box } from '@mui/material';
+import styled from '@emotion/styled';
 
-export const ContainerStyled = styled(Container).attrs({
-  maxWidth: 'lg',
-})`
+export const ContainerStyled = styled(Container)`
   display: flex;
   flex-direction: column;
   position: relative;
@@ -12,6 +10,7 @@ export const ContainerStyled = styled(Container).attrs({
   height: 100vh;
   padding: 4% 5% 1% 5%;
 `;
+ContainerStyled.defaultProps = { maxWidth: 'lg' };
 
 export const BoxContainer = styled(Box)`
   display: flex;

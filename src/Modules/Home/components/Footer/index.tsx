@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
   return (
     <Container>
       <Link>
-        <GitHubIcon />
+        <GitHubIcon src="/images/github.svg" />
       </Link>
     </Container>
   );

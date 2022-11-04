@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import Image from 'next/image';
 import { Box } from '@mui/material';
 
@@ -9,15 +9,16 @@ export const Container = styled(Box)`
   margin-top: 20px;
 `;
 
-export const GitHubIcon = styled(Image).attrs({
-  src: '/images/github.svg',
-  alt: 'Vercel Logo',
+export const GitHubIcon = styled(Image)``;
+GitHubIcon.defaultProps = {
+  alt: 'GitHubIcon',
   width: 82,
   height: 26,
-})``;
+};
 
-export const Link = styled.a.attrs({
+export const Link = styled.a``;
+Link.defaultProps = {
   href: 'https://github.com/AlanDellonSchwartzman/ps3-update-tool',
   target: '_blank',
   rel: 'noopener noreferrer',
-})``;
+};

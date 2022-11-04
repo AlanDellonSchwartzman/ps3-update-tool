@@ -5,10 +5,8 @@ import { Container, Logo, Title } from './styles';
 const Header: React.FC = () => {
   return (
     <Container>
-      <Logo />
-      <Title>
-        PS3 Update Tool
-      </Title>
+      <Logo src='/images/logo.svg' />
+      <Title>PS3 Update Tool</Title>
     </Container>
   );
 };

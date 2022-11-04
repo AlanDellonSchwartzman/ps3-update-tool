@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import { Box, Input, IconButton } from '@mui/material';
-import { Download } from '@mui/icons-material'
+import { Download } from '@mui/icons-material';
 
 export const Container = styled(Box)`
   display: flex;
@@ -12,9 +12,6 @@ export const Container = styled(Box)`
 export const Content = styled(Box)`
   display: flex;
   position: relative;
-  /* flex-direction: column; */
-  /* align-items: center; */
-  /* justify-content: center; */
   padding: 5px;
   border-radius: 50px;
   background-color: #fff;
@@ -22,20 +19,7 @@ export const Content = styled(Box)`
   border: solid black 1px;
 `;
 
-export const InputText = styled(Input).attrs((props) => ({
-  placeholder: 'NPUB31419',
-  // disabled: props.disabled,
-  // onChange: props.onChange,
-  autoFocus: true, 
-  // fullWidth: true,
-  autoComplete: 'serial',
-  name: 'serial',
-  fullWidth: true,
-  enterKeyHint: 'next',
-  disableUnderline: true,
-  inputProps: { maxLength: 9 },
-}))`
-  /* padding: 6px 10px 5px 10px; */
+export const InputText = styled(Input)`
   padding-left: 10px;
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
@@ -50,16 +34,25 @@ export const InputText = styled(Input).attrs((props) => ({
     cursor: not-allowed;
   }
 `;
+InputText.defaultProps = {
+  placeholder: 'NPUB31419',
+  // disabled: props.disabled,
+  // onChange: props.onChange,
+  autoFocus: true,
+  autoComplete: 'serial',
+  name: 'serial',
+  fullWidth: true,
+  disableUnderline: true,
+  inputProps: { maxLength: 9 },
+};
 
-export const Button = styled(IconButton).attrs((props) => ({
-  loading: true,
-  // disabled: true,
-  color: 'secondary',
-}))`
+export const Button = styled(IconButton)`
   :disabled {
     cursor: progress;
   }
 `;
+Button.defaultProps = {
+  color: 'secondary',
+};
 
-export const DownloadIcon = styled(Download)`
-`;
+export const DownloadIcon = styled(Download)``;
