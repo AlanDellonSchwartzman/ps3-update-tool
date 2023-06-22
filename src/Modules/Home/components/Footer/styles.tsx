@@ -9,16 +9,16 @@ export const Container = styled(Box)`
   margin-top: 20px;
 `;
 
-export const GitHubIcon = styled(Image)``;
-GitHubIcon.defaultProps = {
-  alt: 'GitHubIcon',
-  width: 82,
-  height: 26,
-};
-
 export const Link = styled.a``;
 Link.defaultProps = {
   href: 'https://github.com/AlanDellonSchwartzman/ps3-update-tool',
   target: '_blank',
   rel: 'noopener noreferrer',
+};
+
+export const GitHubIcon = styled(Image)``;
+GitHubIcon.defaultProps = {
+  alt: 'GitHubIcon',
+  width: 82,
+  height: 26,
 };

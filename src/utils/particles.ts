@@ -8,7 +8,7 @@ const particlesConfig: ISourceOptions = {
   },
   particles: {
     number: {
-      value: 200,
+      value: 250,
       density: {
         enable: !0,
         value_area: 800,
@@ -48,7 +48,7 @@ const particlesConfig: ISourceOptions = {
     },
     move: {
       enable: !0,
-      speed: 1,
+      speed: 1.5,
       direction: 'none',
       random: !0,
       straight: !1,

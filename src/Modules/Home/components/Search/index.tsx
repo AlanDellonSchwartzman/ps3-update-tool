@@ -1,16 +1,30 @@
-import React from 'react';
-import Loading from '../../../../components/Loading';
+import React, { useState } from 'react';
 
-import { Container, Content, InputText, Button, DownloadIcon } from './styles';
+import { Container, Content, InputText, Button, SubmitIcon } from './styles';
 
-const Search = (): JSX.Element => {
+interface SearchProps {
+  loading: boolean;
+  fetchUpdates: Function;
+}
+
+const Search = ({ loading, fetchUpdates }: SearchProps): JSX.Element => {
+  const [textInput, setTextInput] = useState('' as string);
+
+  const onChangeText = (
+    e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
+  ) => {
+    setTextInput(e.currentTarget.value.toUpperCase());
+  };
+
   return (
     <Container>
       <Content>
-        <InputText />
-        <Button disabled>
-          {/* <DownloadIcon /> */}
-          <Loading />
+        <InputText onChange={onChangeText} />
+        <Button
+          onClick={() => fetchUpdates({ serial: textInput })}
+          loading={loading}
+        >
+          <SubmitIcon />
         </Button>
       </Content>
     </Container>

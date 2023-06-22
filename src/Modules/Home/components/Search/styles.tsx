@@ -1,12 +1,14 @@
 import styled from '@emotion/styled';
 import { Box, Input, IconButton } from '@mui/material';
-import { Download } from '@mui/icons-material';
+import { ArrowForward } from '@mui/icons-material';
+import LoadingButton from '@mui/lab/LoadingButton';
 
 export const Container = styled(Box)`
   display: flex;
   position: relative;
-  flex: 1;
   align-items: center;
+  justify-content: center;
+  margin-top: 15px;
 `;
 
 export const Content = styled(Box)`
@@ -16,7 +18,7 @@ export const Content = styled(Box)`
   border-radius: 50px;
   background-color: #fff;
   height: 50px;
-  border: solid black 1px;
+  border: 1px solid rgba(0, 0, 0, 0.7);
 `;
 
 export const InputText = styled(Input)`
@@ -24,7 +26,7 @@ export const InputText = styled(Input)`
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
   font-size: 3vmin;
-  -webkit-appearance: none;
+  /* appearance: none; */
 
   input {
     text-transform: uppercase;
@@ -36,8 +38,6 @@ export const InputText = styled(Input)`
 `;
 InputText.defaultProps = {
   placeholder: 'NPUB31419',
-  // disabled: props.disabled,
-  // onChange: props.onChange,
   autoFocus: true,
   autoComplete: 'serial',
   name: 'serial',
@@ -46,7 +46,11 @@ InputText.defaultProps = {
   inputProps: { maxLength: 9 },
 };
 
-export const Button = styled(IconButton)`
+export const Button = styled(LoadingButton)`
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  min-width: 40px;
+
   :disabled {
     cursor: progress;
   }
@@ -55,4 +59,4 @@ Button.defaultProps = {
   color: 'secondary',
 };
 
-export const DownloadIcon = styled(Download)``;
+export const SubmitIcon = styled(ArrowForward)``;

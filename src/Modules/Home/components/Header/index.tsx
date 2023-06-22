@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Container, Logo, Title } from './styles';
 
-const Header: React.FC = () => {
+const Header = (): JSX.Element => {
   return (
     <Container>
       <Logo src='/images/logo.svg' />

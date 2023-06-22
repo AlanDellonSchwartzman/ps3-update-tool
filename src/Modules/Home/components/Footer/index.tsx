@@ -2,11 +2,11 @@ import React from 'react';
 
 import { Container, GitHubIcon, Link } from './styles';
 
-const Footer: React.FC = () => {
+const Footer = (): JSX.Element => {
   return (
     <Container>
       <Link>
-        <GitHubIcon src="/images/github.svg" />
+        <GitHubIcon src='/images/github.svg' />
       </Link>
     </Container>
   );

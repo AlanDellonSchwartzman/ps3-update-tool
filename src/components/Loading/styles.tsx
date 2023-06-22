@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
-import RotateRightRoundedIcon from '@mui/icons-material/RotateRightRounded';
+import RefreshIcon from '@mui/icons-material/Refresh';
 
-export const Loading = styled(RotateRightRoundedIcon)`
+export const Loading = styled(RefreshIcon)`
   animation: rotation 1s linear infinite;
 
   @keyframes rotation {
