@@ -1,4 +1,4 @@
-import axios, { AxiosError, AxiosResponse } from 'axios';
+import axios, { AxiosResponse } from 'axios';
 
 interface FetchUpdatesProps {
   serial: string;
@@ -15,13 +15,8 @@ export default async function fetchUpdates({ serial }: FetchUpdatesProps) {
     });
 
     return data;
-  } catch (err) {
-    const error = err as Error | AxiosError;
-    if (axios.isAxiosError(error)) {
-      return { error: error.response?.data.detail };
-    } else {
-      console.error('ERROR:', error);
-      return { error: error.message };
-    }
+  } catch (error) {
+    console.error('ERROR:', error);
+    return { error: error.message || 'Error, please try again.' };
   }
 }

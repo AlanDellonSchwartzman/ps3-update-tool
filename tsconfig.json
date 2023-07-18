@@ -16,7 +16,8 @@
     "incremental": true,
     "paths": {
         "@mui/styled-engine": ["./node_modules/@mui/styled-engine-sc"]
-      }
+      },
+    "useUnknownInCatchVariables": false
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

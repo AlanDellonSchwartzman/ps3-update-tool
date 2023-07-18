@@ -18,7 +18,8 @@ import {
 const TableComponent = ({ updates }: { updates: IUpdate[] }): JSX.Element => {
   const downloadUpdate = (url: string) => {
     const downloadLink = document.createElement('a');
-    downloadLink.href = url.replace('http', 'https');
+    // downloadLink.href = url.replace('http', 'https');
+    downloadLink.href = url;
     downloadLink.target = '_blank';
     downloadLink.rel = 'noopener noreferrer';
     downloadLink.click();
