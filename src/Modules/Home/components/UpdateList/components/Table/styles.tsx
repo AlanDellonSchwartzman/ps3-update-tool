@@ -14,7 +14,7 @@ import LoadingButton from '@mui/lab/LoadingButton';
 export const Container = styled(Box)`
   display: flex;
   flex-direction: column;
-  max-height: 90%;
+  height: 85%;
   padding-bottom: 5px;
 `;
 
@@ -41,7 +41,12 @@ TableCell.defaultProps = {};
 export const TableContainer = styled(TCO)``;
 TableContainer.defaultProps = {};
 
-export const TableHead = styled(TH)``;
+export const TableHead = styled(TH)`
+
+th {
+    padding-bottom: 0;
+  }
+`;
 TableHead.defaultProps = {};
 
 export const TableRow = styled(TR)``;
