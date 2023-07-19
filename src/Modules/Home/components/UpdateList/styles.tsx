@@ -59,7 +59,8 @@ export const ContainerLoading = styled(Box)`
 export const Content = styled(Box)`
   padding: 5px;
   width: 70%;
-  height: 100%;
+  min-height: 45vh;
+  max-height: 45vh;
   border-radius: 15px;
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.6);
