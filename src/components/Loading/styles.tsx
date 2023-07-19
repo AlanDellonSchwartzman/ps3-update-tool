@@ -1,14 +1,10 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
+import RefreshIcon from '@mui/icons-material/Refresh';
 
-export const Container = styled.div`
-  border: 5px solid #f3f3f3;
-  border-top: 5px solid #4F458D;
-  border-radius: 50%;
-  width: 15px;
-  height: 15px;
-  animation: spin 2s linear infinite;
+export const Loading = styled(RefreshIcon)`
+  animation: rotation 1s linear infinite;
 
-  @keyframes spin {
+  @keyframes rotation {
     0% {
       transform: rotate(0deg);
     }
@@ -17,3 +13,6 @@ export const Container = styled.div`
     }
   }
 `;
+Loading.defaultProps = {
+  color: 'secondary',
+};

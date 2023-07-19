@@ -1,9 +1,12 @@
 import React from 'react';
+import { Loading as LoadingComponent } from './styles';
 
-import { Container } from './styles';
-
-const Loading: React.FC = () => {
-  return <Container />;
+const Loading = ({
+  style = {},
+}: {
+  style?: React.CSSProperties;
+}): JSX.Element => {
+  return <LoadingComponent style={style} />;
 };
 
 export default Loading;
